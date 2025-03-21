@@ -9,27 +9,14 @@ function Projects() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/projects")
+      .get("http://localhost:3000/api/projects") // ✅ FIXED
       .then((response) => {
         setProjects(response.data);
         setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching projects:", error);
-
-        if (error.response) {
-          // Handle HTTP errors from the server
-          if (error.response.status === 404) {
-            setError("No projects found.");
-          } else if (error.response.status === 500) {
-            setError("Server error, please try again later.");
-          } else {
-            setError(`Error: ${error.response.data.error}`);
-          }
-        } else {
-          // Handle network errors
-          setError("Failed to connect to the server.");
-        }
+        setError("Failed to load projects.");
         setLoading(false);
       });
   }, []);
@@ -49,9 +36,7 @@ function Projects() {
               <div className="card project-card">
                 <div className="card-body">
                   <h5 className="card-title">{project.name}</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">
-                    By {project.author || "Unknown"}
-                  </h6>
+                  <h6 className="card-subtitle mb-2 text-muted">By {project.author || "Unknown"}</h6>
                   <p className="card-text">{project.description}</p>
                   <p>
                     <strong>Languages:</strong>{" "}
