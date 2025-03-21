@@ -1,0 +1,30 @@
+/* Default (Light Mode) */
+body.light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+body.light .card {
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark .card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+/* Navbar adjustments */
+.navbar-dark.bg-dark {
+  background-color: #343a40 !important;
+}
+
+body.dark .navbar-dark {
+  background-color: #222 !important;
+}

@@ -1,0 +1,19 @@
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .card-body {
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
